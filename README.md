@@ -52,6 +52,13 @@ ok  	github.com/CarlosMC/stargazers-cmc	1.632s
 ## Docker Image
 
 A Docker image has been built so you can run the containerized app with Docker.
+
+Build the image with the following command:
+
+```
+docker build -t carlosmc/stargazers-cmc:1.0.X .
+```
+
 The Docker image also requires the **GH_AUTH_TOKEN** variable to be defined before running it.
 
 You can export and pass it directly from command line like this:
