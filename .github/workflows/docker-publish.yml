@@ -36,4 +36,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DH_USERNAME }}/stargazers-cmc:${{ env.TAG }},${{ secrets.DH_USERNAME }}/stargazers-cmc:latest
+          tags: ${{ secrets.DH_USERNAME }}/stargazers-cmc:${{ env.TAG }}
