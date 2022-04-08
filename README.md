@@ -4,8 +4,10 @@ Get stars count from specific git repos using go-github api
 
 
 ## EXPECTED OUTPUT
+
 ```
 ❯ export GH_AUTH_TOKEN="ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+❯ cd src/
 ❯ go run .
 Stargazers:
     996icu/996.ICU: 261663
@@ -15,7 +17,9 @@ Stargazers:
 
 
 ## TESTS
+
 ```
+❯ cd src/
 ❯ go test -v
 === RUN   TestGetNameAndStartCount
 --- PASS: TestGetNameAndStartCount (1.20s)
@@ -27,6 +31,7 @@ ok  	github.com/CarlosMC/stargazers-cmc	1.632s
 
 
 ## DOCKER
+
 ```
 ❯ export GH_AUTH_TOKEN="ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 ❯ docker run -e GH_AUTH_TOKEN=$GH_AUTH_TOKEN carlosmc/stargazers-cmc:lastest
