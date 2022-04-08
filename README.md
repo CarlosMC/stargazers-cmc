@@ -7,7 +7,7 @@ It uses Github OAuth Tokens for auntentication.
 - freeCodeCamp/freeCodeCamp
 - EbookFoundation/free-programming-books
 
-The output of the app is sent to the stdout in yaml format with a top level mapping called **Stargazers**.
+The output of the app is sent to the stdout in **YAML** format with a top level mapping called **Stargazers**.
 
 
 ## Local run and expected output:
@@ -24,7 +24,7 @@ Stargazers:
     freeCodeCamp/freeCodeCamp: 343607
 ```
 
-The output should be similar to the one showed before, numbers may change.
+The output should be similar to the one shown before, numbers may change.
 
 
 ## Tests:
@@ -59,12 +59,12 @@ You can export and pass it directly from command line like this:
 
 ```
 ❯ export GH_AUTH_TOKEN="ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-❯ docker run -e GH_AUTH_TOKEN=$GH_AUTH_TOKEN carlosmc/stargazers-cmc
+❯ docker run --rm -e GH_AUTH_TOKEN=$GH_AUTH_TOKEN carlosmc/stargazers-cmc
 ```
 
 or you can save the variable into a file (added to .gitignore) for further usage and pass it to Docker with **--env-file** option:
 
 ```
 ❯ echo 'GH_AUTH_TOKEN=ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' > .env
-❯ docker run --env-file .env carlosmc/stargazers-cmc
+❯ docker run --rm --env-file .env carlosmc/stargazers-cmc
 ```

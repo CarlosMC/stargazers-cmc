@@ -10,8 +10,7 @@ RUN go build -o app main.go
 # stage 2: run
 FROM golang:alpine
 WORKDIR /go/bin/
-COPY --from=build /go/src/stargazers-cmc/app ./app-stargazers
+COPY --from=build /go/src/stargazers-cmc/app ./stargazers-cmc
 
 # run the app, output to stdout
-ENTRYPOINT ["./app-stargazers"]
-
+ENTRYPOINT ["./stargazers-cmc"]

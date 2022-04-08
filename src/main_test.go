@@ -5,7 +5,6 @@ import (
 )
 
 func TestGetNameAndStartCount(t *testing.T) {
-
 	// Iterate over ReposList target from main
 	for _, expected := range ReposList {
 		// get name and stars count
@@ -16,7 +15,6 @@ func TestGetNameAndStartCount(t *testing.T) {
 		}
 		if count <= 0 {
 			t.Errorf("Repo Start count lower than zero: %d", count)
-
 		}
 
 	}
@@ -29,7 +27,6 @@ func TestGetRepoStarsList(t *testing.T) {
 	expected := 3
 	if mapSize != expected {
 		t.Errorf("repoStarsCount MAP size %q different than expedted: %q", mapSize, expected)
-
 	}
 
 }
