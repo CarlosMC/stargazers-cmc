@@ -15,8 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
-        name: Checkout - Set Env
+        name: Checkout
         uses: actions/checkout@v2
+      -
+        name: Set TAG env 
         run: echo "TAG=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
       -
         name: Login to Docker Hub
