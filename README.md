@@ -59,12 +59,12 @@ You can export and pass it directly from command line like this:
 
 ```
 ❯ export GH_AUTH_TOKEN="ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-❯ docker run -e GH_AUTH_TOKEN=$GH_AUTH_TOKEN carlosmc/stargazers-cmc:lastest
+❯ docker run --rm -e GH_AUTH_TOKEN=$GH_AUTH_TOKEN carlosmc/stargazers-cmc:lastest
 ```
 
 or you can save the variable into a file (added to .gitignore) for further usage and pass it to Docker with **--env-file** option:
 
 ```
 ❯ echo 'GH_AUTH_TOKEN=ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' > .env
-❯ docker run --env-file .env carlosmc/stargazers-cmc:lastest
+❯ docker run --rm --env-file .env carlosmc/stargazers-cmc:lastest
 ```
