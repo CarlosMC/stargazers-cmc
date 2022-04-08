@@ -2,6 +2,13 @@
 Get stars count from specific git repos using go-github api
 
 
+EXPECTED OUTPUT
+
+❯ go run .
+Stargazers:
+    996icu/996.ICU: 261663
+    EbookFoundation/free-programming-books: 229805
+    freeCodeCamp/freeCodeCamp: 343607
 
 
 
@@ -16,10 +23,9 @@ PASS
 ok  	github.com/CarlosMC/stargazers-cmc	1.632s
 
 
-EXPECTED OUTPUT
 
-❯ go run .
-Stargazers:
-    996icu/996.ICU: 261663
-    EbookFoundation/free-programming-books: 229805
-    freeCodeCamp/freeCodeCamp: 343607
+
+
+DOCKER
+
+docker run carlosmc/stargazers-cmc:lastest
