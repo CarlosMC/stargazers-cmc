@@ -1,13 +1,13 @@
 # stargazers-cmc
 
-Thiss is a Go-lang app that gets the Stars count from the following git repositories using go-github library to consume the github Rest api.
+This is a Go-lang app that gets the Stars count from the following git repositories using go-github library to consume the github Rest api.
 It uses Github OAuth Tokens for auntentication.
 
 - 996icu/996.ICU
 - freeCodeCamp/freeCodeCamp
 - EbookFoundation/free-programming-books
 
-The output of the app is sent to the stdout in yaml format with a top level mapping called **Stargazers**.
+The output of the app is written to the stdout in YAML format with a top level mapping called **Stargazers**.
 
 
 ## Local run and expected output:
@@ -24,7 +24,7 @@ Stargazers:
     freeCodeCamp/freeCodeCamp: 343607
 ```
 
-The output should be similar to the one showed before, numbers may change.
+The output should be similar to the shown before, numbers may change.
 
 
 ## Tests:
@@ -55,16 +55,13 @@ A Docker image has been built so you can run the containerized app
 The Docker image also requires the **GH_AUTH_TOKEN** variable to be defined before running it.
 
 You can export and pass it directly from command line like this:
-
-
 ```
 ❯ export GH_AUTH_TOKEN="ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-❯ docker run --rm -e GH_AUTH_TOKEN=$GH_AUTH_TOKEN carlosmc/stargazers-cmc:lastest
+❯ docker run --rm -e GH_AUTH_TOKEN=$GH_AUTH_TOKEN carlosmc/stargazers-cmc:latest
 ```
 
 or you can save the variable into a file (added to .gitignore) for further usage and pass it to Docker with **--env-file** option:
-
 ```
 ❯ echo 'GH_AUTH_TOKEN=ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' > .env
-❯ docker run --rm --env-file .env carlosmc/stargazers-cmc:lastest
+❯ docker run --rm --env-file .env carlosmc/stargazers-cmc:latest
 ```
