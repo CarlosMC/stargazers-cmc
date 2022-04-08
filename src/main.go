@@ -4,9 +4,11 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"os"
 	"strings"
 
 	"github.com/google/go-github/v43/github"
+	"golang.org/x/oauth2"
 	"gopkg.in/yaml.v3"
 )
 
@@ -56,15 +58,17 @@ func getRepoStarsList(reposList [3]string) map[string]int {
 
 func getNameAndStartCount(repo string) (string, int) {
 
-	// authToken := os.Getenv("GB_AUTH_TOKEN")
-	// if authToken == "" {
-	// 	log.Fatal("No Auth token defined")
-	// }
+	// oauth example taken from: https://github.com/google/go-github/blob/master/example/commitpr/main.go
+	authToken := os.Getenv("GH_AUTH_TOKEN")
 
+	if authToken == "" {
+		log.Fatalln("No Auth token defined")
+	}
 	ctx := context.Background()
-	// ts := oauth2.StaticTokenSource(&oauth2.Token{AccessToken: authToken})
-	// tc := oauth2.NewClient(ctx, ts)
-	client := github.NewClient(nil)
+	ts := oauth2.StaticTokenSource(&oauth2.Token{AccessToken: authToken})
+	tc := oauth2.NewClient(ctx, ts)
+
+	client := github.NewClient(tc)
 
 	// splitting to get owner and reponame
 	repoOwnerAndName := strings.Split(repo, "/")
