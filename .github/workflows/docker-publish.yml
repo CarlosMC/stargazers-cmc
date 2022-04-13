@@ -19,7 +19,7 @@ jobs:
         run: echo "GH_AUTH_TOKEN=${{ secrets.GH_AUTH_TOKEN }}" >> $GITHUB_ENV
       -
         name: Run go tests
-        run : cd src/; go test .
+        run : cd src/; go test -v .
       -
         name: Set TAG env
         run: echo "TAG=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
